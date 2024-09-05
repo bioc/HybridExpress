@@ -286,7 +286,8 @@ pca_plot <- function(
         add_mean = FALSE, palette = NULL
 ) {
     
-    c <- check_coldata_column(se, color_by) & check_coldata_column(se, shape_by)
+    c <- check_coldata_column(se, color_by)
+    c <- if(!is.null(shape_by)) { check_coldata_column(se, shape_by) }
     
     pc <- paste0("PC", PCs)
     pal <- ppal(palette, "pca")
