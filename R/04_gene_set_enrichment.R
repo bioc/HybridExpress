@@ -125,6 +125,7 @@ ora <- function(
         bp_param = BiocParallel::SerialParam()
 ) {
     
+    annotation <- as.data.frame(annotation)
     names(annotation)[1] <- "Gene"
     
     # Filtered `annotation` data frame to keep only specified columns
